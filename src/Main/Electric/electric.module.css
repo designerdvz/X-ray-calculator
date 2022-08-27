@@ -1,0 +1,11 @@
+.wrapper {
+    background-color: aliceblue;
+    flex: 1 1 auto;
+}
+
+.content {
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+   flex-direction: column;
+}
