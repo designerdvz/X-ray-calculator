@@ -5,23 +5,32 @@ import Footer from "../../Footer/footer";
 import Modal from "../../Modal/Modal";
 import {useRef} from "react";
 import termoImg from "../../images/Termo.png";
+import {IconButton, Tooltip} from "@mui/material";
 
 function Thermal() {
 
     let modalText = "Необходимо корректно подобрать параметры: радиус и толщину анода, а также толщину мишени.  Основываясь на них, программа вычисляет температурные параметры, которые нужно сравнить с предельно допустимыми для данного материала. К примеру, получив результат температуры в сечении, равный 1900°С, можно сделать вывод о том, что для материала медь, значение выходит за предел допустимого (800°С), это означает то, что нужно менять параметры, но если будет использован вольфрам, с предельной температурой 2000°С, то выбранные значения корректны."
-    let Ra, Ha, P, Rf, Tosn, Hm, d, Tfp, Pmax, Tsp, Ts, la, lm, x, y, a, b = 0
+    let Tfp, Pmax, Tsp, Ts, la, lm, x, y, a, b = 0
+
+    let Ra = 1.25
+    let Ha = 3.5
+    let P = 1200
+    let Rf = 0.125
+    let Tosn = 100
+    let Hm = 0.25
+
 
     let c = [[2, 1.429, 1.111, 0.909, 0.769], //Двумерный массив для fm и ff
-    [1.429, 1.111, 0.909, 0.769, 0.667],
-    [1.111, 0.909, 0.769, 0.667, 0.588],
-    [0.909, 0.769, 0.667,],
-    [8.333, 3.125, 1.923, 1.389, 1.087],
-    [9.259, 3.472, 2.137, 1.543, 1.208],
-    [10.417, 3.906, 2.404, 1.736, 1.359],
-    [11.905, 4.464, 2.747, 1.984, 1.553]]
+        [1.429, 1.111, 0.909, 0.769, 0.667],
+        [1.111, 0.909, 0.769, 0.667, 0.588],
+        [0.909, 0.769, 0.667,],
+        [8.333, 3.125, 1.923, 1.389, 1.087],
+        [9.259, 3.472, 2.137, 1.543, 1.208],
+        [10.417, 3.906, 2.404, 1.736, 1.359],
+        [11.905, 4.464, 2.747, 1.984, 1.553]]
 
-    x = Rf/Ra ;
-    y = Hm/Ra ;
+    x = Rf / Ra;
+    y = Hm / Ra;
 
     if (x == 0.1) {
         if (y == 0.1) {
@@ -123,27 +132,27 @@ function Thermal() {
     const [valueM, setValueM] = useState('Wolframium');
 
     function showInputRa(event) {
-        Ra = (event.target.value)
+        Ra = +(event.target.value)
     }
 
     function showInputHa(event) {
-        Ha = (event.target.value)
+        Ha = +(event.target.value)
     }
 
     function showInputP(event) {
-        P = (event.target.value)
+        P = +(event.target.value)
     }
 
     function showInputRf(event) {
-        Rf = (event.target.value)
+        Rf = +(event.target.value)
     }
 
     function showInputTosn(event) {
-        Tosn = (event.target.value)
+        Tosn = +(event.target.value)
     }
 
     function showInputHm(event) {
-        Hm = (event.target.value)
+        Hm = +(event.target.value)
     }
 
 
@@ -178,28 +187,28 @@ function Thermal() {
                     <Modal text={modalText}/>
                     <b>Выберите параметры:</b>
                     <div className={s.item}>
-                        Радиус анода, см
-                        <input type="number" onInput={showInputRa}/>
+                      Радиус анода, см
+                        <input type="number" defaultValue={1.25} onInput={showInputRa}/>
                     </div>
                     <div className={s.item}>
                         Толщина анода, см
-                        <input type="number" onInput={showInputHa}/>
+                        <input type="number" defaultValue={3.5} onInput={showInputHa}/>
                     </div>
                     <div className={s.item}>
                         Мощность трубки, Вт
-                        <input type="number" onInput={showInputP}/>
+                        <input type="number" defaultValue={1200} onInput={showInputP}/>
                     </div>
                     <div className={s.item}>
                         Радиус фокусного пятна, см
-                        <input type="number" onInput={showInputRf}/>
+                        <input type="number" defaultValue={0.125} onInput={showInputRf}/>
                     </div>
                     <div className={s.item}>
                         Температура основания анода,
-                        <input type="number" onInput={showInputTosn}/>
+                        <input type="number" defaultValue={100} onInput={showInputTosn}/>
                     </div>
                     <div className={s.item}>
                         Толщина мишени
-                        <input type="number" onInput={showInputHm}/>
+                        <input type="number" defaultValue={0.25} onInput={showInputHm}/>
                     </div>
                     <div className={s.item}>
                         Материал анода:
@@ -219,9 +228,22 @@ function Thermal() {
                     </div>
                     <div className={s.item}>
 
-                        <button onClick={() => {
-                            Ts = Tosn + (P*(Ha-2*Ra))/(3.14*Ra*Ra*la)
-                            console.log(Tosn, P, Ha, Ra, la)
+                        <button onClick={(event) => {
+                            console.log(`Радиус анода - ${Ra}
+                            Толщина анода - ${Ha}
+                            мощность трубки - ${P}
+                            радиус фок пятна - ${Rf}
+                            Температура основания анода - ${Tosn}
+                            толщина мишени - ${Hm}
+                            a - ${a}
+                            b - ${b}
+                    
+                            `)
+                            Ts = Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)
+                            Tfp = Ts + (P) / (Math.PI * Ra * lm) * b
+                            Pmax = ((Tfp - Tosn) * Math.PI * Ra * Ra * lm) / (Ha - 2 * Ra + b * Ra)
+                            Tsp = Ts + (P) / (Math.PI * Ra * lm) * a
+                            console.log(Ra, Ha, P)
                             TfpInput.current.value = Tfp
                             PmaxInput.current.value = Pmax
                             TspInput.current.value = Tsp

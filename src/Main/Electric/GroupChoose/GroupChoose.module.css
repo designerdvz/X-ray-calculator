@@ -1,6 +1,6 @@
 
 .modal {
-    background-color: #c9c9c9;
+    background-color: #efefef;
     width: 70%;
     max-width: 500px;
     max-height: 300px;
@@ -8,7 +8,6 @@
     padding: 10px 30px;
     border-radius: 10px;
     margin-top: 10px;
-
     box-shadow: 0px 1px 20px 11px rgb(84 84 84/ 20%);
 }
 
@@ -63,16 +62,18 @@ button{
     width: 120px;
     max-height: 60px;
     padding: 3px;
+    padding: 3px;
     background-color: #05336e;
     border-radius: 5px;
     color: #ccc;
     font-size: 16px;
-    border: 1px solid #818181;
+    border: 0.5px solid #818181;
     box-shadow: 0px 1px 20px 11px rgb(84 84 84/ 20%);
 }
 
 .button{
     margin-top: 15px;
+
 }
 button:hover {
      transform: translateY(-0.5px);
