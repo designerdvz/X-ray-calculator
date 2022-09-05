@@ -37,7 +37,7 @@ select {
 input {
     margin-left: 5px;
     border-radius: 5px;
-    width: 100%;
+    /*width: 100%;*/
     border: 1px solid black;
     height: 25px;
 }
