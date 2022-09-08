@@ -33,9 +33,12 @@ input {
     margin-left: 5px;
     border-radius: 5px;
 }
-button {
+.button1 {
     margin-top: 10px;
     border: 2px solid black ;
+    background-color: #032049;
+    color: #aacdfb;
+    border-radius: 5px;
 }
 .OneColomn {
     display: flex;

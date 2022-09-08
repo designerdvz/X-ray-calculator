@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58437437-a4cc-4003-beb8-3a3467d2de1d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Main/Electric/RadioChoose/RadioChoose.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Electric/RadioChoose/RadioChoose.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.de62790f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.de62790f.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Consumption/Consumption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Consumption/Consumption.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Consumption/consumption.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Consumption/consumption.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Electric/Electric.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Electric/Electric.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Electric/GroupChoose/GroupChoose.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Electric/GroupChoose/GroupChoose.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Electric/GroupChoose/GroupChoose.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Electric/GroupChoose/GroupChoose.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Electric/withСase/withCase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Electric/withСase/withCase.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Electric/withСase/withCase.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Electric/withСase/withCase.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Thermal/Thermal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Thermal/Thermal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Thermal/thermal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Thermal/thermal.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modal/modal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modal/modal.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/REACT-APP/01-first-project/my-app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Xray&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,7 +97,9 @@
       <workItem from="1661421546272" duration="439000" />
       <workItem from="1661422007591" duration="29671000" />
       <workItem from="1661764117105" duration="12372000" />
-      <workItem from="1662350998025" duration="1543000" />
+      <workItem from="1662350998025" duration="1774000" />
+      <workItem from="1662405604221" duration="880000" />
+      <workItem from="1662572816803" duration="7362000" />
     </task>
     <servers />
   </component>

@@ -53,7 +53,7 @@ function WithCase() {
                         </Tooltip>
                         <input type="number" onInput={showInputK} defaultValue={0.6} step="0.1"/>
                     </div>
-                    <button onClick={() => {
+                    <button className={s.button1} onClick={() => {
                         let d1 = U/C;
                         let d2 = 1/K;
                             d = Math.pow(d1,d2);

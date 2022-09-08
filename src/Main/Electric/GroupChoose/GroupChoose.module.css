@@ -1,10 +1,9 @@
 
-.modal {
+.wrapper {
     background-color: #efefef;
     width: 70%;
     max-width: 500px;
     max-height: 300px;
-    font-size: 20px;
     padding: 10px 30px;
     border-radius: 10px;
     margin-top: 10px;
@@ -58,7 +57,7 @@
     width: 16px;
 }
 
-button{
+.button1{
     width: 120px;
     max-height: 60px;
     padding: 3px;
@@ -75,12 +74,12 @@ button{
     margin-top: 15px;
 
 }
-button:hover {
+.button1:hover {
      transform: translateY(-0.5px);
     color: #eeeeee;
  }
 
-button:active {
+.button1:active {
      transform: translateY(0.2px);
 
  }

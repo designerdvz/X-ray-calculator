@@ -12,7 +12,7 @@ function Modal(props) {
             {open && (
                 <div className={s.overlay}>
                     <div className={s.modal}>
-                        <svg onClick={() => {
+                        <svg className={s.svg} onClick={() => {
                             setOpen(false)
                         }} height="200" viewBox="0 0 200 200" width="200">
                             <title />

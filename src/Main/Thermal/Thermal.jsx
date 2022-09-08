@@ -187,38 +187,38 @@ function Thermal() {
                     <Modal text={modalText}/>
                     <b>Выберите параметры:</b>
                     <div className={s.item}>
-                      Радиус анода, см
+                        <span>Радиус анода, см </span>
                         <input type="number" defaultValue={1.25} onInput={showInputRa}/>
                     </div>
                     <div className={s.item}>
-                        Толщина анода, см
+                        <span>Толщина анода, см</span>
                         <input type="number" defaultValue={3.5} onInput={showInputHa}/>
                     </div>
                     <div className={s.item}>
-                        Мощность трубки, Вт
+                        <span>Мощность трубки, Вт</span>
                         <input type="number" defaultValue={1200} onInput={showInputP}/>
                     </div>
                     <div className={s.item}>
-                        Радиус фокусного пятна, см
+                        <span>Радиус фокусного пятна, см</span>
                         <input type="number" defaultValue={0.125} onInput={showInputRf}/>
                     </div>
                     <div className={s.item}>
-                        Температура основания анода,
+                        <span>Температура основания анода,</span>
                         <input type="number" defaultValue={100} onInput={showInputTosn}/>
                     </div>
                     <div className={s.item}>
-                        Толщина мишени
+                        <span>Толщина мишени</span>
                         <input type="number" defaultValue={0.25} onInput={showInputHm}/>
                     </div>
                     <div className={s.item}>
-                        Материал анода:
+                        <span>Материал анода:</span>
                         <select value={valueA} onChange={changeSelectA}>
                             <option value="Wolframium">Вольфрам</option>
                             <option value="Cuprum">Медь</option>
                         </select>
                     </div>
                     <div className={s.item}>
-                        Материал мишени:
+                        <span>Материал мишени:</span>
                         <select value={valueM} onChange={changeSelectM}>
                             <option value="Wolframium">Вольфрам</option>
                             <option value="Cuprum">Медь</option>
@@ -228,7 +228,7 @@ function Thermal() {
                     </div>
                     <div className={s.item}>
 
-                        <button onClick={(event) => {
+                        <button className={s.button1} onClick={(event) => {
                             console.log(`Радиус анода - ${Ra}
                             Толщина анода - ${Ha}
                             мощность трубки - ${P}
@@ -259,19 +259,19 @@ function Thermal() {
                         <b>Результат вычисления:</b>
                     </div>
                     <div className={s.item}>
-                        Температура центра фокусного пятна,
+                        <span> Температура центра фокусного пятна,</span>
                         <input type="number" ref={TfpInput} step="0.1"/>
                     </div>
                     <div className={s.item}>
-                        Максимально допустимая мощность, Вт
+                        <span>  Максимально допустимая мощность, Вт</span>
                         <input type="number" ref={PmaxInput} step="0.1"/>
                     </div>
                     <div className={s.item}>
-                        Температура в центре спая мишени с анодом,
+                        <span> Температура в центре спая мишени с анодом,</span>
                         <input type="number" ref={TspInput} step="0.1"/>
                     </div>
                     <div className={s.item}>
-                        Температура в сечении,
+                        <span>Температура в сечении,</span>
                         <input type="number" ref={TsInput} step="0.1"/>
                     </div>
                 </div>
