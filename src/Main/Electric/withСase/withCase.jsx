@@ -33,7 +33,7 @@ function WithCase() {
                     <img className={s.caseImg} src={caseImg}/>
                     <b>Введите начальные значения:</b>
                     <div className={s.item}>
-                        U, кВ
+                        <span>U, кВ</span>
                         <input type="number" onInput={showInputU}/>
                         {/*<input type="number" onInput={showInput} step="1" min="1" max="100" id="age" name="age"/>*/}
                     </div>
@@ -43,13 +43,13 @@ function WithCase() {
                     </div>
                     <div className={s.item}>
                         <Tooltip describeChild title="С - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> C, кВ/мм^2 </div>
+                            <span>C, кВ/мм^2 </span>
                         </Tooltip>
                         <input type="number" onInput={showInputC} defaultValue={47}/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="К - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> K </div>
+                            <span>K</span>
                         </Tooltip>
                         <input type="number" onInput={showInputK} defaultValue={0.6} step="0.1"/>
                     </div>
@@ -70,7 +70,7 @@ function WithCase() {
                         Рассчитано межэлектродное расстояние
                     </div>
                     <div className={s.item}>
-                        d,мм
+                        <span>d,мм</span>
                         <input type="number" ref={dInput} step="0.1" />
                     </div>
                 </div>

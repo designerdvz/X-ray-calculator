@@ -12,7 +12,7 @@
 
 .caseImg {
     max-height: 300px;
-    width: 400px;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -20,34 +20,54 @@
     transition: 0.3s all;
 }
 .caseImg:hover {
-    width: 500px;
+    width: 100%
 
 }
+.item span{
+    width: 50%;
+    display: block;
+}
 
+.item input {
+    display: block;
+    border: 1px solid black;
+    height: 25px;
+    width: 40%;
+    justify-self: right;
+    border-radius: 5px;
+}
 .item {
     display: flex;
     margin-bottom: 10px;
     margin-top: 10px;
+    /*width: 250px;*/
+    width: 100%;
+    justify-content: space-between;
 }
-input {
-    margin-left: 5px;
-    border-radius: 5px;
-}
+
 .button1 {
     margin-top: 10px;
     border: 2px solid black ;
     background-color: #032049;
     color: #aacdfb;
     border-radius: 5px;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+    height: 30px;
+    align-items: center;
 }
 .OneColomn {
     display: flex;
     flex-direction: column;
+    /*width: 30vw;*/
 }
 .TwoColomn {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 100px;
+    width: 40vw;
 }
 .resultsItem {
     margin-top: 50px;
@@ -55,4 +75,40 @@ input {
 
 .Tooltip {
 size: 16px
+}
+@media (max-width: 450px) {
+    .content{
+        flex-direction: column;
+    }
+    .resultsItem {
+        margin-top: 25px;
+    }
+    .OneColomn {
+        width: 100%;
+    }
+    .button1 {
+        width: 200px;
+        height: 30px;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .TwoColomn {
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+    .item {
+        width: 100%;
+        margin-left: 0;
+    }
+    .item select {
+        display: inline-block;
+        height: 25px;
+        width: 50%
+    }
+    .item input {
+        margin-left: 5px;
+        display: inline-block;
+        height: 25px;
+    }
 }

@@ -18,13 +18,13 @@
      margin-left: 5px;
     display: block;
     border-radius: 5px;
-     border: 1px solid black;
+     border: 1px solid #032049;
      height: 25px;
     width: 40%
  }
 .termoImg{
     max-height: 300px;
-    width: 100%;
+    width: 80%;
     margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -32,12 +32,13 @@
     transition: 0.3s all;
 }
 .termoImg:hover {
-    width: 500px;
+    width: 90%;
 }
 select {
     margin-left: 5px;
     border-radius: 5px;
-
+    border: 1px solid #032049;
+    width: 40%
 }
 .item {
     display: flex;
@@ -53,6 +54,9 @@ select {
     background-color: #032049;
     color: #aacdfb;
     border-radius: 5px;
+    height: 30px;
+    align-items: center;
+    width: 50%;
 }
 .OneColomn {
     display: flex;
@@ -75,12 +79,22 @@ select {
     .OneColomn {
         width: 100%;
     }
+    .button1 {
+        width: 200px;
+        height: 30px;
+        font-size: 16px;
+    }
     .TwoColomn {
         width: 100%;
         margin-left: 0px;
+        margin-bottom: 10px;
     }
     .termoImg {
         margin-top: 20px;
+        width: 100%
+    }
+    .termoImg:hover {
+        width: 100%
     }
     .item {
         width: 100%;
@@ -96,9 +110,6 @@ select {
         margin-left: 5px;
         display: inline-block;
         height: 25px;
-
     }
-    .item span {
 
-    }
 }

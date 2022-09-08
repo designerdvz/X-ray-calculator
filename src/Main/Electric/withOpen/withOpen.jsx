@@ -38,10 +38,10 @@ function WithOpen () {
                 <div className={s.OneColomn}>
                     <Modal text={modalText}/>
                     <b>Выбрана группа с открытым полым пространством </b>
-                    <img className={s.caseImg} src={openImg}/>
+                    <img className={s.openImg} src={openImg}/>
                     <b>Введите начальные значения:</b>
                     <div className={s.item}>
-                        U, кВ
+                        <span>U, кВ</span>
                         <input type="number" onInput={showInputU}/>
                         {/*<input type="number" onInput={showInput} step="1" min="1" max="100" id="age" name="age"/>*/}
                     </div>
@@ -51,23 +51,23 @@ function WithOpen () {
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="C - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> C, кВ/мм^2 </div>
+                            <span>C, кВ/мм^2</span>
                         </Tooltip>
                         <input type="number" onInput={showInputC} defaultValue={42}/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="К - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> K </div>
+                            <span>K</span>
                         </Tooltip>
                         <input type="number" onInput={showInputK} defaultValue={0.7} step="0.1"/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="B - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> B, мм/кВ </div>
+                            <span>B, мм/кВ</span>
                         </Tooltip>
                         <input type="number" onInput={showInputB} defaultValue={0} step="0.1"/>
                     </div>
-                    <button onClick={() => {
+                    <button className={s.button1} onClick={() => {
                         let d1 = U/C;
                         let d2 = 1/K;
                         d = Math.pow(d1,d2);
@@ -86,11 +86,11 @@ function WithOpen () {
                         Рассчитано межэлектродное расстояние
                     </div>
                     <div className={s.item}>
-                        d,мм
+                        <span> d,мм</span>
                         <input type="number" ref={dInput} step="0.1" />
                     </div>
                     <div className={s.item}>
-                        rэб,мм
+                        <span>rэб,мм</span>
                         <input type="number" ref={rInput} step="0.1" />
                     </div>
                 </div>

@@ -40,14 +40,14 @@ function WithTwo () {
                 <div className={s.OneColomn}>
                     <Modal text = {modalText}/>
                     <b>Выбрана группа с двумя межэлектродными промежутками </b>
-                    <img className={s.caseImg} src={TwoImg}/>
+                    <img className={s.twoImg} src={TwoImg}/>
                     <b>Введите начальные значения:</b>
                     <div className={s.item}>
-                        U, кВ
+                        <span>U, кВ</span>
                         <input type="number" onInput={showInputU}/>
                     </div>
                     <div className={s.item}>
-                        D2, мм
+                        <span>D2, мм</span>
                         <input type="number" onInput={showInputD2}/>
                     </div>
                     <div className={s.item}>
@@ -56,17 +56,17 @@ function WithTwo () {
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="C - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div>  C, кВ/мм^2 </div>
+                            <span>C, кВ/мм^2 </span>
                         </Tooltip>
                         <input type="number" onInput={showInputC} defaultValue={33}/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="К - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
-                            <div> K </div>
+                            <span>K</span>
                         </Tooltip>
                         <input type="number" onInput={showInputK} defaultValue={0.6} step="0.1"/>
                     </div>
-                    <button onClick={() => {
+                    <button className={s.button1} onClick={() => {
                         let d1 = U / C;
                         let d2 = 1 / K;
                         d = Math.pow(d1, d2);
@@ -84,11 +84,11 @@ function WithTwo () {
                         Рассчитано межэлектродное расстояние
                     </div>
                     <div className={s.item}>
-                        d,мм
+                        <span>d,мм</span>
                         <input type="number" ref={dInput} step="0.1"/>
                     </div>
                     <div className={s.item}>
-                        D1,мм
+                        <span>D1,мм</span>
                         <input type="number" ref={D1Input} step="0.1"/>
                     </div>
                 </div>
