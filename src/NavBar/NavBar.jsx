@@ -13,10 +13,13 @@ function NavBar() {
                     <NavLink className={activeLink} to="/electric"> Электрическая прочность</NavLink>
                 </div>
                 <div className={s.item}>
+                    <NavLink  className={activeLink} to="/themperature"> Температура </NavLink>
+                </div>
+                <div className={s.item}>
                     <NavLink  className={activeLink} to="/thermal"> Тепловой режим</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink className={activeLink} to="/consumption"> Расход жидкости</NavLink>
+                    <NavLink className={activeLink} to="/consumption"> Спектр излучения</NavLink>
                 </div>
             </div>
         </div>

@@ -27,9 +27,15 @@ function GroupChoose() {
             <FormControl className={s.form}>
                 <FormLabel className={s.formLabel}>Выберите конструктивную группу:</FormLabel>
                 <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <div className={s.FormControlLabel}>
                     <FormControlLabel value="withCase" control={<Radio/>} label="С чехлом на аноде"/>
+                    </div>
+                    <div className={s.FormControlLabel}>
                     <FormControlLabel value="withOpen" control={<Radio/>} label="С открытым пролётным пространством"/>
+                    </div>
+                    <div className={s.FormControlLabel}>
                     <FormControlLabel value="withTwo" control={<Radio/>} label="С двумя межэлектродными промежутками"/>
+                    </div>
                 </RadioGroup>
             </FormControl>
         </div>

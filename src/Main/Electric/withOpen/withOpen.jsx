@@ -4,33 +4,13 @@ import {useRef} from "react";
 import Modal from "../../../Modal/Modal";
 import openImg from "../../../images/WithOpen.png";
 import {Tooltip} from "@mui/material";
+import { useSelector, useDispatch } from 'react-redux'
+import {calculate_d, calculate_r, setParametr} from "../../../store/electricWithOpenSlice";
 
 function WithOpen () {
     let modalText = "Задача раздела об электрической прочности рентгеновской трубки- оценить способность прибора обеспечивать стабильную работу при приложении к электродам заданного высокого напряжения. Необходимо вычислить геометрические параметры: межэлектродное расстояние, а также, исходя из выбора конструктивной группы, могут потребоваться вычисления и других параметров, таких как расстояние электрод-баллон, внутренний диаметр анодного узла, диаметр катодного узла. Все размеры вычисляются исходя из выбранных параметров: приложенного напряжения, материала мишени и конструктивной группы."
-
-    let d = 0
-    let r = 0
-    let U = 0
-    let B = 0
-    let C = 42
-    let K = 0.7
-    const dInput = useRef(0)
-    const rInput = useRef(0)
-
-    function showInputU(event) {
-        U = (event.target.value)
-    }
-
-    function showInputC(event) {
-        C = (event.target.value)
-    }
-
-    function showInputK(event) {
-        K = (event.target.value)
-    }
-    function showInputB(event) {
-        B = (event.target.value)
-    }
+    const {d, r, U, B, C, K} = useSelector((state) => state.electric_withOpen)
+    const dispatch = useDispatch()
 
     return (
         <div className={s.wrapper}>
@@ -41,9 +21,8 @@ function WithOpen () {
                     <img className={s.openImg} src={openImg}/>
                     <b>Введите начальные значения:</b>
                     <div className={s.item}>
-                        <span>U, кВ</span>
-                        <input type="number" onInput={showInputU}/>
-                        {/*<input type="number" onInput={showInput} step="1" min="1" max="100" id="age" name="age"/>*/}
+                        <span id={s.labelU}>U, кВ</span>
+                        <input type="number" step="1" min="1" max="100" value={U} onChange={(event) => dispatch(setParametr({parametr: 'U', ref: event.target.value}))} />
                     </div>
                     <div className={s.item}>
                         Коэффициенты, которые были определены исходя из выбора <br/>
@@ -53,28 +32,25 @@ function WithOpen () {
                         <Tooltip  describeChild title="C - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
                             <span>C, кВ/мм^2</span>
                         </Tooltip>
-                        <input type="number" onInput={showInputC} defaultValue={42}/>
+                        <input type="number" value={C} onChange={(event) => dispatch(setParametr({parametr: 'C', ref: event.target.value}))}/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="К - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
                             <span>K</span>
                         </Tooltip>
-                        <input type="number" onInput={showInputK} defaultValue={0.7} step="0.1"/>
+                        <input type="number" step={'0.1'} value={K} onChange={(event) => dispatch(setParametr({parametr: 'K', ref: event.target.value}))}/>
                     </div>
                     <div className={s.item}>
                         <Tooltip  describeChild title="B - Коэффициент, зависящий от конфигурации электродов, формы кривой напряжения и некоторых других факторов">
                             <span>B, мм/кВ</span>
                         </Tooltip>
-                        <input type="number" onInput={showInputB} defaultValue={0} step="0.1"/>
+                        <input type="number" step={'0.1'} value={B} onChange={(event) => dispatch(setParametr({parametr: 'B', ref: event.target.value}))}/>
                     </div>
                     <button className={s.button1} onClick={() => {
                         let d1 = U/C;
                         let d2 = 1/K;
-                        d = Math.pow(d1,d2);
-                        dInput.current.value = d
-                        r = 0.1 * B * U
-                        rInput.current.value = r
-                        console.log(`d1 = ${d1}, d2= ${d2}, d=${d}`)
+                        dispatch(calculate_d({d1,d2}))
+                        dispatch(calculate_r({B,U}))
                     }}> Вычислить
                     </button>
                 </div>
@@ -87,11 +63,11 @@ function WithOpen () {
                     </div>
                     <div className={s.item}>
                         <span> d,мм</span>
-                        <input type="number" ref={dInput} step="0.1" />
+                        <input type="number" value={d} disabled />
                     </div>
                     <div className={s.item}>
                         <span>rэб,мм</span>
-                        <input type="number" ref={rInput} step="0.1" />
+                        <input type="number" value={r} disabled />
                     </div>
                 </div>
             </div>
