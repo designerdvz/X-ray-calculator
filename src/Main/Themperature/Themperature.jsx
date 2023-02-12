@@ -6,7 +6,7 @@ import Modal from "../../Modal/Modal";
 import {useRef} from "react";
 import termoImg from "../../images/Termo.png";
 import {IconButton, Tooltip} from "@mui/material";
-import {calculate_d, calculate_r, setParametr} from "../../store/electricWithOpenSlice";
+import {setParametr} from "../../store/themperature";
 import {useDispatch, useSelector} from "react-redux";
 import {calculate_Pmax, calculate_Tfp, calculate_Ts, calculate_Tsp} from "../../store/themperature";
 

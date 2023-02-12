@@ -10,16 +10,18 @@ function Consumption() {
     const [valueAnod, setValueAnod] = useState('Rhenium');
     const [valueFilter, setValueFilter] = useState('Cuprum');
 
-    let {U, P, Emin, k, R, psi, m, HWindow, HFilter, HGlass, Angle} = useSelector((state) => state.plot)
-    let modalText = "написать о построении графика."
+    let {U, Emin, k, R, psi, m, HWindow, HFilter, HGlass, Angle} = useSelector((state) => state.plot)
+    let {P} = useSelector((state) => state.themperature)
+    let modalText = 'В этом разделе реализована возможность построения спектра тормозного излучениня рентгеновской трубки. При построении учитывается значение напряжения, которое было вами занесено во вкладку "электрическая прочность", а так же мощность, вписанная вами во вкладке "температура"'
     const dispatch = useDispatch()
     let Emax = U
-    let I = P / U
+    let I = (P / 1000) / U
     let Xe = U / 10 * Math.pow(10, -6)
     let fi = 90 - psi
     let axisX = []
     let axisY = []
     let tRh = 0
+    let tMo = 0
     let tAl = 0
     let Z = 0
     let tSi = 0
@@ -99,15 +101,15 @@ function Consumption() {
             let o_kMo = (1 + 5.411 * 0.1 * i) * Math.pow((1.345 * Math.pow(10, -1) + 7.06 * 0.01 * i + 1.463 * 0.01 * Math.pow(i, 2) + 5.588 * Math.pow(10, -4) * Math.pow(i, 3)), -1)
             let o_nkMo = Math.pow((80.67 * Math.pow(i, -1) + 5.926 + 0.01748 * i), -1)
             if (i > 19.999) {
-                tRh = t_BKMo
+                tMo = t_BKMo
             } else if (i > 2.865) {
-                tRh = t_L1KMo
+                tMo = t_L1KMo
             } else if (i > 2.625) {
-                tRh = t_L2L1Mo
+                tMo = t_L2L1Mo
             } else if (i > 2.52) {
-                tRh = t_L3L2Mo
-            } else tRh = t_L3Mo
-            m_filter = tRh + o_kMo + o_nkMo
+                tMo = t_L3L2Mo
+            } else tMo = t_L3Mo
+            m_filter = tMo + o_kMo + o_nkMo
             ro_filter = 10.2
         } else if (valueFilter == 'Aluminium') {
             let t_BKAl = -(0.3471 * Math.pow(10, -2)) * Math.pow(i, 0) + (0.1384 * Math.pow(10, 1)) * Math.pow(i, -1) - (0.2137 * Math.pow(10, 3)) * Math.pow(i, -2) + (0.295 * Math.pow(10, 5)) * Math.pow(i, -3) - (0.2217 * Math.pow(10, 5)) * Math.pow(i, -4)
@@ -184,11 +186,11 @@ function Consumption() {
                 </div>
                 <div className={s.TwoColomn}>
                     <b>Выберите параметры:</b>
-                    <div className={s.item}>
-                        <span id={s.labelU}>прикладываемое напряжение, кВ</span>
-                        <input type="number" value={U}
-                               onChange={(event) => dispatch(setParametr({parametr: 'U', ref: event.target.value}))}/>
-                    </div>
+                    {/*<div className={s.item}>*/}
+                    {/*    <span id={s.labelU}>прикладываемое напряжение, кВ</span>*/}
+                    {/*    <input type="number" value={U} min={0} max={1000}*/}
+                    {/*           onChange={(event) => dispatch(setParametr({parametr: 'U', ref: event.target.value}))}/>*/}
+                    {/*</div>*/}
                     <div className={s.item}>
                         <span id={s.labelAnod}>материал анода</span>
                         <select value={valueAnod} onChange={changeSelectAnod}>
@@ -205,21 +207,17 @@ function Consumption() {
                         </select>
                     </div>
                     <div className={s.item}>
-                        <span id={s.labelP}>мощность трубки, Вт</span>
-                        <input type="number" value={P}
-                               onChange={(event) => dispatch(setParametr({parametr: 'P', ref: event.target.value}))}/>
-                    </div>
-                    <div className={s.item}>
                         <span id={s.labelHWindow}>толщина выпускного окна, мкм</span>
-                        <input type="number" value={HWindow}
+                        <input type="number" value={HWindow} min={0}
                                onChange={(event) => dispatch(setParametr({
                                    parametr: 'HWindow',
                                    ref: event.target.value
                                }))}/>
                     </div>
+
                     <div className={s.item}>
                         <span id={s.labelHFilter}>толщина фильтра, мкм</span>
-                        <input type="number" value={HFilter}
+                        <input type="number" value={HFilter} min={0} max={1000}
                                onChange={(event) => dispatch(setParametr({
                                    parametr: 'HFilter',
                                    ref: event.target.value
@@ -227,7 +225,7 @@ function Consumption() {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelP}>толщина стеклянного корпуса, мкм</span>
-                        <input type="number" value={HGlass}
+                        <input type="number" value={HGlass} min={0} max={100}
                                onChange={(event) => dispatch(setParametr({
                                    parametr: 'HGlass',
                                    ref: event.target.value
@@ -235,7 +233,7 @@ function Consumption() {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelAngle}>Угол среза анода</span>
-                        <input type="number" value={Angle}
+                        <input type="number" value={Angle} min={60} max={90}
                                onChange={(event) => dispatch(setParametr({
                                    parametr: 'angle',
                                    ref: event.target.value

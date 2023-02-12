@@ -4,7 +4,7 @@ const initialState = {
     d: 0,
     D2: 0,
     D1: 0,
-    U: 0,
+    U: 30,
     C: 33,
     K: 0.6,
 }
