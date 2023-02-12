@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    U: 50000,
-
+    U: 30,
+    HWindow: 10, //толщина выпускного окна
+    HFilter: 0.2, //толщина фильтра
+    HGlass: 12, //толщина стеклянного корпуса
+    Angle: 50, //угол среза анода
     Emin: 0,
-    P: 600,
-
-    k: 0.000175, //коэф-т роорциональности
-    Z: 74,
-    R: 0.5, // расстояние до точки, в которой находим интенсивность
-    psi: Math.PI / 6,
-
+    P: 3,
+    k: 8.8 * Math.pow(10,8), //коэф-т роорциональности
+    R: 1, // расстояние до точки, в которой находим интенсивность
+    psi: Math.PI / 2,
     m: 9.4 * Math.pow(10, -6) // массовый коэффициент ослабления
-
 }
+
 export const plotSlice = createSlice({
         name: 'plotSlice',
         initialState,
