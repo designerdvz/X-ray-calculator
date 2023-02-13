@@ -179,9 +179,11 @@ function Consumption() {
                                 type: 'scatter',
                                 mode: 'lines+markers',
                                 marker: {color: 'red'},
+                                layer: "G"
                             },
                         ]}
-                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения'}}
+                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения', xaxis: {title:"E"}, yaxis: {title:"N(E)"}, }}
+
                     />
                 </div>
                 <div className={s.TwoColomn}>
