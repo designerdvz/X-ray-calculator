@@ -186,7 +186,7 @@ function Consumption() {
                                 layer: "G"
                             },
                         ]}
-                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения', xaxis: {title:"E"}, yaxis: {title:"N(E)"},}}
+                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения', xaxis: {title:"E, кэВ"}, yaxis: {title:"N(E), шт"},}}
 
                     />
                 </div>
