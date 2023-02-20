@@ -35,7 +35,7 @@ function Consumption() {
     let m_window = 0
     let m_glass = 0
 
-    for (let i = Emin; i < Emax;) {
+    for (let i = Emin+0.3; i < Emax;) {
         if (valueAnod == 'Wolframium') {
             let t_BKW = (0.5609 * Math.pow(10, 7)) * Math.pow(i, -3) - (0.1409 * Math.pow(10, 9)) * Math.pow(i, -4)
             let t_L1KW = (0.2293 * Math.pow(10, 4)) * Math.pow(i, -2) + (0.5922 * Math.pow(10, 6)) * Math.pow(i, -3) - (0.2501 * Math.pow(10, 7)) * Math.pow(i, -4)
@@ -93,6 +93,7 @@ function Consumption() {
             Z = 75
         }
         if (valueFilter == 'Molybdenum') {
+            m_filter = 0
             let t_BKMo = (0.9649 * Math.pow(10, 6)) * Math.pow(i, -3) - (0.6635 * Math.pow(10, 7)) * Math.pow(i, -4)
             let t_L1KMo = (0.9956 * Math.pow(10, 3)) * Math.pow(i, -2) + (0.8166 * Math.pow(10, 5)) * Math.pow(i, -3) - (0.9212 * Math.pow(10, 5)) * Math.pow(i, -4)
             let t_L2L1Mo = (0.6946 * Math.pow(10, 5)) * Math.pow(i, -3) - (0.6720 * Math.pow(10, 5)) * Math.pow(i, -4)
@@ -153,6 +154,9 @@ function Consumption() {
 
         axisX.push(i)
         axisY.push((k * I * Z * 0.001) / Math.pow(R, 2) * ((Emax / i) - 1) * Math.exp(-m_anod * ro_anod * Xe * (Math.cos(psi) / Math.cos(fi * Math.PI / 180))) * Math.exp(-m_filter * ro_filter * HFilter * 0.0001) * Math.exp(-m_window * ro_window * HWindow * 0.0001)* Math.exp(-m_glass * ro_glass * HGlass * 0.0001))
+        console.log(i, '-----', m_filter, ro_filter)
+        console.log((k * I * Z * 0.001) / Math.pow(R, 2) * ((Emax / i) - 1) * Math.exp(-m_anod * ro_anod * Xe * (Math.cos(psi) / Math.cos(fi * Math.PI / 180))) * Math.exp(-m_filter * ro_filter * HFilter * 0.0001) * Math.exp(-m_window * ro_window * HWindow * 0.0001)* Math.exp(-m_glass * ro_glass * HGlass * 0.0001))
+
         i = i + 0.1
     }
 
@@ -182,7 +186,7 @@ function Consumption() {
                                 layer: "G"
                             },
                         ]}
-                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения', xaxis: {title:"E"}, yaxis: {title:"N(E)"}, }}
+                        layout={{width: 500, height: 300, title: 'Спектр тормозного излучения', xaxis: {title:"E"}, yaxis: {title:"N(E)"},}}
 
                     />
                 </div>
