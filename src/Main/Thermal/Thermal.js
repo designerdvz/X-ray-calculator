@@ -1,14 +1,22 @@
 import s from "../Themperature/Themperature.module.css";
 import Modal from "../../Modal/Modal";
-import React from "react";
+import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import thermalImg from "../../images/Thermal.png";
-import {calculate_Q1, calculate_Q2, setParametr } from "../../store/thermal";
+import {setParametr} from "../../store/thermal";
 
 const Thermal = () => {
-    let {d2, d, ro, l2, l1, r1, r2, tst, tzh, Q1, Q2, L, al1, l, al2} = useSelector((state) => state.thermal)
+    let {d2, d, ro, l2, l1, r1, r2, tst, tzh } = useSelector((state) => state.thermal)
+
+    function roundPlus(x, n) { //x - число, n - количество знаков
+        if (isNaN(x) || isNaN(n)) return false;
+        let m = Math.pow(10, n);
+        return Math.round(x * m) / m;
+    }
 
     const dispatch = useDispatch()
+    const [Q1, setQ1] = useState(0)
+    const [Q2, setQ2] = useState(0)
     let modalText = 'Считаем количество теплоты'
     return (
         <div className={s.wrapper}>
@@ -22,7 +30,7 @@ const Thermal = () => {
                                onChange={(event) => dispatch(setParametr({parametr: 'd2', ref: event.target.value}))}/>
                     </div>
                     <div className={s.item}>
-                        <span id={s.labeld}>внутренний диаметр зазора, см</span>
+                        <span id={s.labeld}>внутренний диаметр зазора, м</span>
                         <input type="number" value={d}
                                onChange={(event) => dispatch(setParametr({parametr: 'd', ref: event.target.value}))}/>
                     </div>
@@ -63,8 +71,27 @@ const Thermal = () => {
                     </div>
                     <div className={s.item}>
                         <button className={s.button1} onClick={(event) => {
-                            dispatch(calculate_Q2({d, L, al1, l, r2, al2, tst, tzh}))
-                            dispatch(calculate_Q1({d2, al1, r1, tst, tzh}))
+                            let S1 = Math.PI * ((d2 * d2) / 4)
+                            let S2 = Math.PI * ((d * d) / 4)
+                            let L = 2 * Math.PI * d
+                            let A = 1 // коэффициент температуропроводности
+                            let V1 = 0.0001 * 2.5 / (6 * S1)// скорость жидкости
+                            let V2 = 0.0001 * 2.5 / (6 * S2)
+                            let d3 = (4 * S2)/L //эквивалентный диаметр цилиндрического зазора
+                            let W = 1.5 // кинематическая вязкость жидкости, м2/сек
+                            let Pr = W/A
+                            let Re1 = (V1 * d2) / W
+                            let Re2 = (V2 * d3) / W
+                            console.log(`S1 = ${S1} S2 = ${S2} L = ${L} V1 = ${V1} V2 = ${V2} d3 = ${d3} Pr = ${Pr} `)
+                            let A1 = 1.68 * Math.pow(Re1, 0.46) * Math.pow(Pr, 0.4) * (l1 / d2) //коэффициент теплоотдачи
+                            let A2 = 0.22 * Math.pow(Re2, 0.6) * Math.pow(Pr, 0.4) * (l1 / d3) //коэффициент теплоотдачи
+                            let F1 = Math.PI * r1 * r1
+                            let F2 = Math.PI * r2 * r2
+                            let m = Math.pow((A2 * 0.25)/(l2 * F2), 0.5)
+                            setQ1(roundPlus((A1 * F1 * (tst - tzh)), 2))
+                            console.log(Q1)
+                            setQ2(roundPlus((tst - tzh) * l2 * F2 * m * tst * 0.25, 2))
+                            console.log( Q2)
                         }}> Вычислить
                         </button>
                     </div>
