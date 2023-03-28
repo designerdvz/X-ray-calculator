@@ -34,11 +34,7 @@ const Thermal = () => {
                         <input type="number" value={d}
                                onChange={(event) => dispatch(setParametr({parametr: 'd', ref: event.target.value}))}/>
                     </div>
-                    <div className={s.item}>
-                        <span id={s.labelro}>плотность жидкости, кг/м^3</span>
-                        <input type="number" value={ro}
-                               onChange={(event) => dispatch(setParametr({parametr: 'ro', ref: event.target.value}))}/>
-                    </div>
+
                     <div className={s.item}>
                         <span id={s.labell2}>теплопроводность стенок анода</span>
                         <input type="number" value={l2}
