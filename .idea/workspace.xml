@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58437437-a4cc-4003-beb8-3a3467d2de1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.f51fcf02.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.f51fcf02.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.f51fcf02.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Themperature/Themperature.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Themperature/Themperature.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Themperature/Themperature.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Themperature/Themperature.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Thermal/Thermal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Thermal/Thermal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.5b615916.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.5b615916.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/787.eb19b499.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/787.eb19b499.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.76c3a45f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/Question.9e697661d4847c590fb9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/Termo.5cdf6b45b3088c0f4a86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/Thermal.b3d3db742b75a85b11ae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/WithCase.35733109d3643484b48c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/WithOpen.4e4768e5b54b46ae9c4b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/WithTwo.99c99fef3aa1a6db80b5.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,7 @@
       <workItem from="1679316878638" duration="697000" />
       <workItem from="1679406640746" duration="1786000" />
       <workItem from="1679987078538" duration="2103000" />
-      <workItem from="1680466581307" duration="1880000" />
+      <workItem from="1680466581307" duration="2665000" />
     </task>
     <servers />
   </component>
