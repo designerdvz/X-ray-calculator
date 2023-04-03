@@ -14,9 +14,12 @@ const Thermal = () => {
         return Math.round(x * m) / m;
     }
 
+
     const dispatch = useDispatch()
     const [Q1, setQ1] = useState(0)
     const [Q2, setQ2] = useState(0)
+    const [V1, setV1] = useState(0)
+    const [V2, setV2] = useState(0)
     let modalText = 'Считаем количество теплоты'
     return (
         <div className={s.wrapper}>
@@ -71,8 +74,6 @@ const Thermal = () => {
                             let S2 = Math.PI * ((d * d) / 4)
                             let L = 2 * Math.PI * d
                             let A = 1 // коэффициент температуропроводности
-                            let V1 = 0.0001 * 2.5 / (6 * S1)// скорость жидкости
-                            let V2 = 0.0001 * 2.5 / (6 * S2)
                             let d3 = (4 * S2)/L //эквивалентный диаметр цилиндрического зазора
                             let W = 1.5 // кинематическая вязкость жидкости, м2/сек
                             let Pr = W/A

@@ -143,7 +143,7 @@ let la, lm = 0
         setValueM(event.target.value);
     }
 
-
+let [valid, setValid] = React.useState(true)
 
     return (
         <div className={s.wrapper}>
@@ -153,11 +153,14 @@ let la, lm = 0
                     <b>Выберите параметры:</b>
                     <div className={s.item}>
                         <span id={s.labelRa}>радиус анода, см</span>
-                        <input type="number" value={Ra} min={0.05} max={0.20} onChange={(event) => dispatch(setParametr({parametr: 'Ra', ref: event.target.value}))} />
+                        <input className={valid ? '' : s.invalid} type="number" value={Ra} min={0.5} max={2} step={0.1} onChange={(event) => dispatch(setParametr({parametr: 'Ra', ref: event.target.value}))} />
                     </div>
+                    {!valid && <div className={s.item}>
+                        <span className={s.invalid}> Толщина анода должна превышать радиус анода в 2 раза. </span>
+                    </div>}
                     <div className={s.item}>
                         <span id={s.labelHa}>Толщина анода, см</span>
-                        <input type="number" value={Ha} min={0.45} max={0.9} onChange={(event) => dispatch(setParametr({parametr: 'Ha', ref: event.target.value}))} />
+                        <input className={valid ? '' : s.invalid} type="number" value={Ha} min={4.5} max={9} step={0.5}onChange={(event) => dispatch(setParametr({parametr: 'Ha', ref: event.target.value}))} />
                     </div>
                     <div className={s.item}>
                         <span id={s.labelP}>Мощность трубки, Вт</span>
@@ -195,28 +198,37 @@ let la, lm = 0
                     <div className={s.item}>
 
                         <button className={s.button1} onClick={(event) => {
-                            if (valueA == 'Wolframium') { //данные взяты из интернета (теплопроводность в Вт/см*цельсий)
-                                la = 1.63
-                            } else if (valueA == 'Cuprum') {
-                                la = 3.8
-                            }
-                            if (valueM == 'Wolframium') {
-                                lm = 1.63
-                            } else if (valueM == 'Cuprum') {
-                                lm = 3.80
-                            } else if (valueM == 'Molybdaenum') {
-                                lm = 1.35
-                            } else if (valueM == 'Argentum') {
-                                lm = 4.30
-                            }else if (valueM == 'Rhenium') {
-                                lm = 0.48
-                            }
-                                setTs ( roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2))
-                                setTsp ( roundPlus((( roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2)) + ((P) / (Math.PI * Ra * lm)) * a), 2))
-                                setTfp (roundPlus((( roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2)) + (P) / (Math.PI * Ra * lm) * b), 2))
-                            console.log(la,lm, a, b)
-                                setPmax (roundPlus((((TfpMAX - Tosn) * Math.PI * Ra * Ra * lm) / (Ha - 2 * Ra + b * Ra)), 2))
+                            if (Ha >= Ra * 2) {
+                                setValid(true)
+                                if (valueA == 'Wolframium') { //данные взяты из интернета (теплопроводность в Вт/см*цельсий)
+                                    la = 1.63
+                                } else if (valueA == 'Cuprum') {
+                                    la = 3.8
+                                }
+                                if (valueM == 'Wolframium') {
+                                    lm = 1.63
+                                } else if (valueM == 'Cuprum') {
+                                    lm = 3.80
+                                } else if (valueM == 'Molybdaenum') {
+                                    lm = 1.35
+                                } else if (valueM == 'Argentum') {
+                                    lm = 4.30
+                                } else if (valueM == 'Rhenium') {
+                                    lm = 0.48
+                                }
+                                setTs(roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2))
+                                setTsp(roundPlus(((roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2)) + ((P) / (Math.PI * Ra * lm)) * a), 2))
+                                setTfp(roundPlus(((roundPlus((Tosn + (P * (Ha - 2 * Ra)) / (Math.PI * Ra * Ra * la)), 2)) + (P) / (Math.PI * Ra * lm) * b), 2))
+                                console.log(la, lm, a, b)
+                                setPmax(roundPlus((((TfpMAX - Tosn) * Math.PI * Ra * Ra * lm) / (Ha - 2 * Ra + b * Ra)), 2))
 
+                            } else {
+                                setValid(false)
+                                setPmax(0)
+                                setTfp(0)
+                                setTs(0)
+                                setTsp(0)
+                            }
                         }
                         }> Вычислить
                         </button>

@@ -58,6 +58,10 @@ select {
     align-items: center;
     width: 50%;
 }
+.invalid{
+    color: #c42323;
+}
+
 .OneColomn {
     display: flex;
     flex-direction: column;
