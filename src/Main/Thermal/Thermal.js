@@ -34,7 +34,7 @@ const Thermal = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labeld}>внутренний диаметр зазора, м</span>
-                        <input type="number" value={d}
+                        <input type="number" value={d} min={0.001}
                                onChange={(event) => dispatch(setParametr({parametr: 'd', ref: event.target.value}))}/>
                     </div>
 
@@ -107,6 +107,7 @@ const Thermal = () => {
                         <input type="number" value={Q2} disabled/>
                     </div>
                 </div>
+
             </div>
         </div>
     )
