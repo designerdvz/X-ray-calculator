@@ -6,7 +6,7 @@ const initialState = {
     P: 2800,
     Rf: 0.22,
     Tosn: 70,
-    Hm: 0.01,
+    Hm: 0.1,
     valueA: 'Wolframium',
     valueM: 'Wolframium',
     TfpMAX: 2000,

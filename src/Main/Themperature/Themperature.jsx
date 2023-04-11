@@ -62,20 +62,35 @@ function Themperature() {
                     </div>
                     <div className={s.item}>
                         <span>Радиус фокусного пятна, см</span>
-                        <input type="number" value={Rf}
+                        <input type="number" value={Rf} min={0} max={1} step={0.1}
                                onChange={(event) => dispatch(setParametr({parametr: 'Rf', ref: event.target.value}))}/>
                     </div>
                     <div className={s.item}>
+                        <div className={s.valid}>
                         <span>Температура основания анода,</span>
-                        <input type="number" value={Tosn} min={70} max={90} onChange={(event) => dispatch(setParametr({
-                            parametr: 'Tosn',
-                            ref: event.target.value
-                        }))}/>
+                        { (Tosn > 90 || Tosn < 70) ? <div className={s.invalidText}>Диапазон значений температуры основания анода 70-90 </div> : null}
+                        </div>
+                            <input type="number" value={Tosn} min={70} max={90} onChange={(event) => {
+                            dispatch(setParametr({
+                                parametr: 'Tosn',
+                                ref: event.target.value
+                            }))
+                            if (event.target.value > 90 || event.target.value < 70) {setButtonDisabled(true)} else setButtonDisabled(false)
+                        }}/>
                     </div>
                     <div className={s.item}>
+                        <div className={s.valid}>
                         <span>Толщина мишени, см</span>
-                        <input type="number" value={Hm} min={0.5} max={2}
-                               onChange={(event) => dispatch(setParametr({parametr: 'Hm', ref: event.target.value}))}/>
+                            { (Hm > 0.2 || Hm < 0.05) ? <div className={s.invalidText}>Диапазон значений толщины мишени 0,05-0,2 см </div> : null}
+                            </div>
+                            <input type="number" value={Hm} min={0.05} max={0.2} step={0.01}
+                               onChange={(event) => {
+                                   dispatch(setParametr({parametr: 'Hm', ref: event.target.value}))
+                                   if (event.target.value > 0.2 || event.target.value < 0.05) {
+                                       setButtonDisabled(true)
+                                   } else setButtonDisabled(false)
+                               }
+                               }/>
                     </div>
                     <div className={s.item}>
                         <span>Материал анода:</span>

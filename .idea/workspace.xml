@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58437437-a4cc-4003-beb8-3a3467d2de1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Consumption/Consumption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Consumption/Consumption.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.38e3bd08.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.38e3bd08.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.3a537c4d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.3a537c4d.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.3a537c4d.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Themperature/Themperature.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Themperature/Themperature.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Themperature/Themperature.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Themperature/Themperature.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Thermal/Thermal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Thermal/Thermal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/themperature.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/themperature.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +124,7 @@
       <workItem from="1680466581307" duration="2806000" />
       <workItem from="1680524512273" duration="57000" />
       <workItem from="1680674321742" duration="2517000" />
-      <workItem from="1681204767215" duration="10661000" />
+      <workItem from="1681204767215" duration="11995000" />
     </task>
     <servers />
   </component>
