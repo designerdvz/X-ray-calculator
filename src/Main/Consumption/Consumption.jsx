@@ -192,11 +192,6 @@ function Consumption() {
                 </div>
                 <div className={s.TwoColomn}>
                     <b>Выберите параметры:</b>
-                    {/*<div className={s.item}>*/}
-                    {/*    <span id={s.labelU}>прикладываемое напряжение, кВ</span>*/}
-                    {/*    <input type="number" value={U} min={0} max={1000}*/}
-                    {/*           onChange={(event) => dispatch(setParametr({parametr: 'U', ref: event.target.value}))}/>*/}
-                    {/*</div>*/}
                     <div className={s.item}>
                         <span id={s.labelAnod}>материал анода</span>
                         <select value={valueAnod} onChange={changeSelectAnod}>

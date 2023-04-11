@@ -86,9 +86,7 @@ const Thermal = () => {
                             let F2 = Math.PI * r2 * r2
                             let m = Math.pow((A2 * 0.25)/(l2 * F2), 0.5)
                             setQ1(roundPlus((A1 * F1 * (tst - tzh)), 2))
-                            console.log(Q1)
                             setQ2(roundPlus((tst - tzh) * l2 * F2 * m * tst * 0.25, 2))
-                            console.log( Q2)
                         }}> Вычислить
                         </button>
                     </div>
