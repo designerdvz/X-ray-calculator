@@ -27,7 +27,7 @@ function ThermalGroupChoose() {
             <div className={s.wrapper}>
                 <FormControl className={s.form}>
                     <FormLabel className={s.formLabel}>
-                        Выберите конструктивную группу:
+                        Выберите вид охлаждающей системы:
                     </FormLabel>
                     <RadioGroup
                         value={category}
