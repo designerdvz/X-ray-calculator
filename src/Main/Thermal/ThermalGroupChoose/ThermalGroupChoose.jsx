@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './GroupChoose.module.css'
+import s from './ThermalGroupChoose.module.css'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import {
@@ -10,18 +10,15 @@ import {
     RadioGroup,
 } from '@mui/material'
 
-function GroupChoose() {
-    const [category, setCategory] = useState('withCase')
+function ThermalGroupChoose() {
+    const [category, setCategory] = useState('flowSystem')
 
     const result = (category) => {
-        if (category == 'withCase') {
+        if (category == 'flowSystem') {
             return 1
         }
-        if (category == 'withOpen') {
+        if (category == 'tubeSystem') {
             return 2
-        }
-        if (category == 'withTwo') {
-            return 3
         }
     }
 
@@ -38,23 +35,16 @@ function GroupChoose() {
                     >
                         <div className={s.FormControlLabel}>
                             <FormControlLabel
-                                value="withCase"
+                                value="flowSystem"
                                 control={<Radio />}
-                                label="С чехлом на аноде"
+                                label="Проточная система охлаждения"
                             />
                         </div>
                         <div className={s.FormControlLabel}>
                             <FormControlLabel
-                                value="withOpen"
+                                value="tubeSystem"
                                 control={<Radio />}
-                                label="С открытым пролётным пространством"
-                            />
-                        </div>
-                        <div className={s.FormControlLabel}>
-                            <FormControlLabel
-                                value="withTwo"
-                                control={<Radio />}
-                                label="С двумя межэлектродными промежутками"
+                                label="В виде системы трубок"
                             />
                         </div>
                     </RadioGroup>
@@ -62,11 +52,11 @@ function GroupChoose() {
             </div>
 
             <div className={s.button}>
-                <NavLink to={`/group${result(category)}`}>
+                <NavLink to={`/ThermalGroup${result(category)}`}>
                     <button className={s.button1}>Далее </button>
                 </NavLink>
             </div>
         </>
     )
 }
-export default GroupChoose
+export default ThermalGroupChoose

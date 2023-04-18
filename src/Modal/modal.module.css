@@ -2,6 +2,7 @@
 .modal {
     background-color: #fff;
     width: 70%;
+    text-align: center;
     max-width: 500px;
     max-height: 300px;
     padding: 40px 30px;
@@ -36,4 +37,16 @@
     width: 30px;
     margin-top: 25px;
     margin-bottom: 15px;
+}
+
+.contentImg{
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.contentImg img {
+    border-radius: 10px;
 }

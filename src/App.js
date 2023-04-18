@@ -11,6 +11,8 @@ import WithOpen from './Main/Electric/withOpen/withOpen'
 import WithCase from './Main/Electric/withСase/withCase'
 import WithTwo from './Main/Electric/withTwo/withTwo'
 import Thermal from './Main/Thermal/Thermal'
+import FlowSystem from './Main/Thermal/flowSystem/FlowSystem'
+import TubeSystem from './Main/Thermal/tubeSystem/TubeSystem'
 
 function App() {
     return (
@@ -22,6 +24,8 @@ function App() {
                     <Route path="/group1" element={<WithCase />} />
                     <Route path="/group2" element={<WithOpen />} />
                     <Route path="/group3" element={<WithTwo />} />
+                    <Route path="/ThermalGroup1" element={<FlowSystem />} />
+                    <Route path="/ThermalGroup2" element={<TubeSystem />} />
                     <Route path="/electric" element={<Electric />} />
                     <Route path="/themperature" element={<Themperature />} />
                     <Route path="/thermal" element={<Thermal />} />
