@@ -21,7 +21,7 @@ const FlowSystem = () => {
                     <b>Выберите параметры:</b>
                     <div className={s.item}>
                         <span id={s.labeld2}>
-                            Внутренний диаметр подводящей трубки, м
+                            Диаметр подводящей трубки (d2), м
                         </span>
                         <input
                             type="number"
@@ -37,7 +37,7 @@ const FlowSystem = () => {
                         />
                     </div>
                     <div className={s.item}>
-                        <span id={s.labeld}>Внутренний диаметр зазора, м</span>
+                        <span id={s.labeld}>Внутренний диаметр подводящей трубки (d1), м</span>
                         <input
                             type="number"
                             value={d}
@@ -54,7 +54,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelr1}>
-                            Радиус кривизны наружной стенки, м
+                            Радиус кривизны наружной стенки (D1/2), м
                         </span>
                         <input
                             type="number"
@@ -71,7 +71,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelr2}>
-                            Радиус кривизны внутренней стенки, м
+                            Радиус кривизны внутренней стенки (D2/2), м
                         </span>
                         <input
                             type="number"

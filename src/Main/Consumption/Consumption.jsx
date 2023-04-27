@@ -450,7 +450,7 @@ function Consumption() {
                             onChange={(event) =>
                                 dispatch(
                                     setParametr({
-                                        parametr: 'angle',
+                                        parametr: 'Angle',
                                         ref: event.target.value,
                                     })
                                 )
