@@ -21,7 +21,7 @@ const FlowSystem = () => {
                     <b>Выберите параметры:</b>
                     <div className={s.item}>
                         <span id={s.labeld2}>
-                            Внутренний диаметр подводящей трубки, см
+                            Внутренний диаметр подводящей трубки, м
                         </span>
                         <input
                             type="number"
@@ -54,7 +54,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelr1}>
-                            Радиус кривизны наружной стенки
+                            Радиус кривизны наружной стенки, м
                         </span>
                         <input
                             type="number"
@@ -71,7 +71,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labelr2}>
-                            Радиус кривизны внутренней стенки
+                            Радиус кривизны внутренней стенки, м
                         </span>
                         <input
                             type="number"
@@ -88,7 +88,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labeltst}>
-                            Температура охлаждаемой стенки
+                            Температура охлаждаемой стенки, °C
                         </span>
                         <input
                             type="number"
@@ -105,7 +105,7 @@ const FlowSystem = () => {
                     </div>
                     <div className={s.item}>
                         <span id={s.labeltzh}>
-                            Температура охлаждающей жидкости
+                            Температура охлаждающей жидкости, °C
                         </span>
                         <input
                             type="number"

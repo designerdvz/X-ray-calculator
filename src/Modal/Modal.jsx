@@ -31,7 +31,7 @@ function Modal(props) {
                         </svg>
                         <div className={s.modalText}>{props.text}</div>
                         <div className={s.contentImg}>
-                        { props.src && <img  src={props.src}/>}
+                        { props.src && <img src={props.src}/>}
                         </div>
                     </div>
                 </div>

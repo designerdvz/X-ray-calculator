@@ -156,7 +156,7 @@ function Themperature() {
                     </div>
                     <div className={s.item}>
                         <div className={s.valid}>
-                            <span>Температура основания анода,</span>
+                            <span>Температура основания анода, °C</span>
                             {Tosn > 90 || Tosn < 70 ? (
                                 <div className={s.invalidText}>
                                     Диапазон значений температуры основания
@@ -308,7 +308,7 @@ function Themperature() {
                         <b>Результат вычисления:</b>
                     </div>
                     <div className={s.item}>
-                        <span> Температура центра фокусного пятна, </span>
+                        <span> Температура центра фокусного пятна, °C</span>
                         <input type="number" value={Tfp} disabled />
                     </div>
                     <div className={s.item}>
@@ -316,11 +316,11 @@ function Themperature() {
                         <input type="number" value={Pmax} disabled />
                     </div>
                     <div className={s.item}>
-                        <span> Температура в центре спая мишени с анодом,</span>
+                        <span> Температура в центре спая мишени с анодом, °C</span>
                         <input type="number" value={Tsp} disabled />
                     </div>
                     <div className={s.item}>
-                        <span>Температура в сечении,</span>
+                        <span>Температура в сечении, °C</span>
                         <input type="number" value={Ts} disabled />
                     </div>
                 </div>
