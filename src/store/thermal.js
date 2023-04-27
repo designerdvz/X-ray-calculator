@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    d2: 0.015,
-    d: 0.012,
-    r1: 0.03,
-    r2: 0.028,
+    d2: 15,
+    d: 12,
+    r1: 26,
+    r2: 28,
     P: 100,
-    tst: 30,
-    tzh: 0,
+    tst: 80,
+    tzh: 25,
     Q1: 0,
     Q2: 0,
     l1: 1, //теплопроводность жидкости
@@ -29,17 +29,17 @@ export const thermalSlice = createSlice({
                 return Math.round(x * m) / m
             }
             let W = 1.5 // кинематическая вязкость жидкости, м2/сек
-            let S1 = Math.PI * ((action.payload.d2 * action.payload.d2) / 4)
+            let S1 = Math.PI * (((action.payload.d2/1000) * (action.payload.d2/1000)) / 4)
             let V1 = (Math.pow(10, -4) * 2.5) / (6 * S1)
             let A = 1 // коэффициент температуропроводности
             let Pr = W / A
-            let Re1 = (V1 * action.payload.d2) / W
-            let F1 = Math.PI * action.payload.r1 * action.payload.r1
+            let Re1 = (V1 * (action.payload.d2/1000)) / W
+            let F1 = Math.PI * (action.payload.r1/1000) * (action.payload.r1/1000)
             let A1 =
                 1.68 *
                 Math.pow(Re1, 0.46) *
                 Math.pow(Pr, 0.4) *
-                (action.payload.l1 / action.payload.d2) //коэффициент теплоотдачи
+                (action.payload.l1 / (action.payload.d2/1000)) //коэффициент теплоотдачи
             state.Q1 = roundPlus(
                 A1 * F1 * (action.payload.tst - action.payload.tzh),
                 2
@@ -49,11 +49,11 @@ export const thermalSlice = createSlice({
             console.log(
                 'calculate_Q2___' +
                     'd=' +
-                    action.payload.d +
+                    action.payload.d/1000 +
                     'l1=' +
                     action.payload.l1 +
                     'r2=' +
-                    action.payload.r2 +
+                    action.payload.r2/1000 +
                     'l2=' +
                     action.payload.l2 +
                     'tst=' +
@@ -67,8 +67,8 @@ export const thermalSlice = createSlice({
                 let m = Math.pow(10, n)
                 return Math.round(x * m) / m
             }
-            let S2 = Math.PI * ((action.payload.d * action.payload.d) / 4)
-            let L = 2 * Math.PI * action.payload.d
+            let S2 = Math.PI * ((action.payload.d/1000 * action.payload.d/1000) / 4)
+            let L = 2 * Math.PI * (action.payload.d/1000)
             let d3 = (4 * S2) / L //эквивалентный диаметр цилиндрического зазора
             let V2 = (Math.pow(10, -4) * 2.5) / (6 * S2)
             let W = 1.5 // кинематическая вязкость жидкости, м2/сек
@@ -80,7 +80,7 @@ export const thermalSlice = createSlice({
                 Math.pow(Re2, 0.6) *
                 Math.pow(Pr, 0.4) *
                 (action.payload.l1 / d3) //коэффициент теплоотдачи
-            let F2 = Math.PI * action.payload.r2 * action.payload.r2
+            let F2 = Math.PI * (action.payload.r2/1000) * (action.payload.r2/1000)
             let m = Math.pow((A2 * 0.25) / (action.payload.l2 * F2), 0.5)
             console.log(
                 'S2=' +

@@ -39,3 +39,15 @@
     height: 25px;
     width: 40%
 }
+.invalidText{
+    color: #c42323;
+}
+.valid{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.valid span {
+    width: 100%;
+    display: block;
+}

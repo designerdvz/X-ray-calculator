@@ -441,13 +441,20 @@ function Consumption() {
                         />
                     </div>
                     <div className={s.item}>
-                        <span id={s.labelAngle}>Угол среза анода</span>
+                        <div className={s.valid}>
+                            <span id={s.labelP}>Угол среза анода, °</span>
+                            {Angle > 90 || Angle < 60 ? (
+                                <div className={s.invalidText}>
+                                    Угол среза анода лежит в диапазоне 60-90°
+                                </div>
+                            ) : null}
+                        </div>
                         <input
                             type="number"
                             value={Angle}
                             min={60}
                             max={90}
-                            onChange={(event) =>
+                            onChange={(event) => 
                                 dispatch(
                                     setParametr({
                                         parametr: 'Angle',

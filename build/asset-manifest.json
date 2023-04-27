@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/X-ray-calculator/static/css/main.0d16c5e1.css",
-    "main.js": "/X-ray-calculator/static/js/main.c36f5e07.js",
+    "main.js": "/X-ray-calculator/static/js/main.1bcecfbc.js",
     "static/js/787.eb19b499.chunk.js": "/X-ray-calculator/static/js/787.eb19b499.chunk.js",
-    "static/media/Thermal.png": "/X-ray-calculator/static/media/Thermal.b3d3db742b75a85b11ae.png",
     "static/media/WithTwo.png": "/X-ray-calculator/static/media/WithTwo.99c99fef3aa1a6db80b5.png",
     "static/media/WithOpen.png": "/X-ray-calculator/static/media/WithOpen.4e4768e5b54b46ae9c4b.png",
     "static/media/WithCase.png": "/X-ray-calculator/static/media/WithCase.35733109d3643484b48c.png",
+    "static/media/Thermal.png": "/X-ray-calculator/static/media/Thermal.6fbecef11582056c59b3.png",
     "static/media/Termo.png": "/X-ray-calculator/static/media/Termo.5cdf6b45b3088c0f4a86.png",
     "static/media/Question.png": "/X-ray-calculator/static/media/Question.9e697661d4847c590fb9.png",
     "index.html": "/X-ray-calculator/index.html",
     "main.0d16c5e1.css.map": "/X-ray-calculator/static/css/main.0d16c5e1.css.map",
-    "main.c36f5e07.js.map": "/X-ray-calculator/static/js/main.c36f5e07.js.map",
+    "main.1bcecfbc.js.map": "/X-ray-calculator/static/js/main.1bcecfbc.js.map",
     "787.eb19b499.chunk.js.map": "/X-ray-calculator/static/js/787.eb19b499.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d16c5e1.css",
-    "static/js/main.c36f5e07.js"
+    "static/js/main.1bcecfbc.js"
   ]
 }
