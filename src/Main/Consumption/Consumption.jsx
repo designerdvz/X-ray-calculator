@@ -11,7 +11,7 @@ function Consumption() {
     const [valueFilter, setValueFilter] = useState('Cuprum')
     const [U, setU] = useState(30)
 
-    let {Emin, k, R, psi, m, HWindow, HFilter, HGlass, Angle } =
+    let {Emin, k, R, m, HWindow, HFilter, HGlass, Angle } =
         useSelector((state) => state.plot)
     let { U: U1 } = useSelector((state) => state.electric_withCase)
     let { U: U2 } = useSelector((state) => state.electric_withOpen)
@@ -28,6 +28,7 @@ function Consumption() {
         'В этом разделе реализована возможность построения спектра тормозного излучениня рентгеновской трубки. При построении учитывается значение напряжения, которое было вами занесено во вкладку "электрическая прочность", а так же мощность, вписанная вами во вкладке "температура"'
     const dispatch = useDispatch()
     let Emax = U
+    let psi = Angle * Math.PI / 180 //угол среза анода в радианах
     let I = P / 1000 / U
     let Xe = (U / 10) * Math.pow(10, -6)
     let fi = 90 - psi
