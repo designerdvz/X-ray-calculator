@@ -16,6 +16,8 @@ function WithTwo() {
     const { d, D2, D1, U, C, K } = useSelector(
         (state) => state.electric_withTwo
     )
+    // let { U } = useSelector((state) => state.electricWithCase)
+
     return (
         <div className={s.wrapper}>
             <div className={s.content}>

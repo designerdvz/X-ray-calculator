@@ -9,9 +9,20 @@ import { useState } from 'react'
 function Consumption() {
     const [valueAnod, setValueAnod] = useState('Rhenium')
     const [valueFilter, setValueFilter] = useState('Cuprum')
+    const [U, setU] = useState(30)
 
-    let { U, Emin, k, R, psi, m, HWindow, HFilter, HGlass, Angle } =
+    let {Emin, k, R, psi, m, HWindow, HFilter, HGlass, Angle } =
         useSelector((state) => state.plot)
+    let { U: U1 } = useSelector((state) => state.electric_withCase)
+    let { U: U2 } = useSelector((state) => state.electric_withOpen)
+    let { U: U3 } = useSelector((state) => state.electric_withTwo)
+
+    React.useEffect(() => {
+        if (U1 !== 30) {setU(U1)}
+    if (U2 !== 30) {setU(U2)}
+    if (U3 !== 30) {setU(U3)}
+    }, [])
+
     let { P } = useSelector((state) => state.themperature)
     let modalText =
         'В этом разделе реализована возможность построения спектра тормозного излучениня рентгеновской трубки. При построении учитывается значение напряжения, которое было вами занесено во вкладку "электрическая прочность", а так же мощность, вписанная вами во вкладке "температура"'
@@ -367,6 +378,9 @@ function Consumption() {
                 </div>
                 <div className={s.TwoColomn}>
                     <b>Выберите параметры:</b>
+                    <div className={s.item}>
+                        <div className={s.info}>Значение напряжения задано на вкладке электрической прочности</div>
+                    </div>
                     <div className={s.item}>
                         <span id={s.labelAnod}>материал анода</span>
                         <select value={valueAnod} onChange={changeSelectAnod}>

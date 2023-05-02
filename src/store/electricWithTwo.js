@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     d: 0,
     D2: 0,
-    D1: 0,
     U: 30,
+    D1: 0,
     C: 33,
     K: 0.6,
 }
